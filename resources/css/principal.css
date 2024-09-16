@@ -1,0 +1,13 @@
+#header {
+    background-color: #f4f4f4;
+}
+
+#header nav {
+    text-align: end;
+}
+
+#header nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}

@@ -40,32 +40,7 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-            $(document).ready(function() {
-                let swtch = 0;
-                $('#foco').on("click", function() {
-                    // Cambia el valor de swtch entre 0 y 1
-                    swtch = swtch === 0 ? 1 : 0;
-                    // Actualiza el ícono dentro del enlace #foco
-                    if (swtch == 0) {
-                        $('#foco').html('<span class="material-symbols-outlined">highlight</span>');
-                        $('.login-container').css('box-shadow', '0 0 10px rgba(0, 0, 0, 0.1)');
-                        $('#content').css('background-color', '#f4f4f4');
-                        $('#header').css('background-color','#f4f4f4');
-                        $('body').css('background-color', '#f4f4f4');
-                        $('#texto').css('color','black');
-                    } else {
-                        $('#texto').css('color','white');
-                        $('#foco').html('<span class="material-symbols-outlined" style="color: white">flashlight_on</span>');
-                        $('.login-container').css('box-shadow', '0 0 10px rgba(255, 255, 255, 0.788)');
-                        $('#content').css('background-color', '#1c2833');
-                        $('#header').css('background-color','#1c2833');
-                        $('body').css('background-color', '#1c2833');
-                    }
-                });
-            });
-        </script>
-
+        @vite(['resources/js/foco.js'])
     </div>
 </body>
 

@@ -21,3 +21,11 @@
     </div>
 </div>
 @endsection
+
+{{-- @extends('layouts.principal')
+
+@section('title','principal')
+    
+@section('contenido')
+    
+@endsection --}}
