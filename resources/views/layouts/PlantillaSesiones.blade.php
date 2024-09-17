@@ -20,12 +20,12 @@
         @if (Route::has('login'))
             <nav class="container">
                 <div class="row">
-                    <div class="col-6 d-flex align-items-center">
+                    <div class="col-6 d-flex align-items-center mt-3">
                         <a href="#" id="foco"><span class="material-symbols-outlined">highlight</span></a>
                     </div>
-                    <div class="col-6 d-flex align-items-center justify-content-end">
+                    {{-- <div class="col-6 d-flex align-items-center justify-content-end">
                         @yield('header')
-                    </div>
+                    </div> --}}
                 </div>
             </nav>
         @endif
