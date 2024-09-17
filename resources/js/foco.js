@@ -15,14 +15,14 @@ $(document).ready(function() {
             $('#content').css('background-color', '#f4f4f4');
             $('#header').css('background-color','#f4f4f4');
             $('body').css('background-color', '#f4f4f4');
-            $('#texto').css('color','black');
+            $('.texto').css('color','black');
         } else {
             $('#foco').html('<span class="material-symbols-outlined" style="color: white">flashlight_on</span>');
             $('.login-container').css('box-shadow', '0 0 10px rgba(255, 255, 255, 0.788)');
             $('#content').css('background-color', '#1c2833');
             $('#header').css('background-color','#1c2833');
             $('body').css('background-color', '#1c2833');
-            $('#texto').css('color','white');
+            $('.texto').css('color','white');
         }
     }
 });

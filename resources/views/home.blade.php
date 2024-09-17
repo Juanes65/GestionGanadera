@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -20,12 +20,18 @@
         </div>
     </div>
 </div>
-@endsection
+@endsection --}}
 
-{{-- @extends('layouts.principal')
+@extends('layouts.principal')
 
 @section('title','principal')
     
 @section('contenido')
-    
-@endsection --}}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h1 class="texto">Hola Mundo este es un proyecto para la gestion ganadera</h1>
+            </div>
+        </div>
+    </div>
+@endsection
