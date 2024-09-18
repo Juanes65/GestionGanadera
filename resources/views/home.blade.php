@@ -31,7 +31,7 @@
     <div class="row mt-5">
         <div class="col-sm-4 divisor">
             <div class="image-container">
-                <a href="#">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#animals">
                     <img src="img/images.png" class="img">
                 </a>
                 <label class="TextoPpal">Insert Animals</label>
@@ -40,7 +40,7 @@
 
         <div class="col-sm-4 divisor">
             <div class="image-container">
-                <a href="#">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#inventario">
                     <img src="img/images.png" class="img">
                 </a>
                 <label class="TextoPpal">Insert Medic</label>
@@ -49,7 +49,7 @@
 
         <div class="col-sm-4 divisor">
             <div class="image-container">
-                <a href="{{route('menu_usuarios')}}">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#users">
                     <img src="img/images.png" class="img">
                 </a>
                 <label class="TextoPpal">Insert User</label>
@@ -75,4 +75,7 @@
         </div>
     </div>
 
+    {{-- SE INCLUYEN LOS MODALS --}}
+    @include('includes.ModalPrincipal')
+    @include('includes.ModalInsertar')
 @endsection

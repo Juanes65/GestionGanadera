@@ -27,25 +27,27 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($usuarios as $users)
+                                        @foreach ($inventory as $inventario)
                                             <tr>
-                                                <td>{{ $users->name }}</td>
-                                                <td>{{ $users->apellido }}</td>
-                                                <td>{{ $users->cedula }}</td>
-                                                <td>{{ $users->email }}</td>
+                                                <td>{{ $inventario->nombreMedicamento }}</td>
+                                                <td>{{ $inventario->cantidad }}</td>
+                                                <td>{{ $inventario->fechaVencimiento }}</td>
+                                                <td>{{ $inventario->categoria }}</td>
                                                 <td class="td-actions text-left">
                                                     <!-- Botón de edición con atributos de datos -->
-                                                    <a href="#" class="btn btn-warning editar-usuario"
-                                                        data-id="{{ $users->id }}" data-name="{{ $users->name }}"
-                                                        data-apellido="{{ $users->apellido }}"
-                                                        data-cedula="{{ $users->cedula }}" data-email="{{ $users->email }}"
+                                                    <a href="#" class="btn btn-warning editar-insumos"
+                                                        data-id="{{ $inventario->id }}"
+                                                        data-nombremedicamento="{{ $inventario->nombreMedicamento }}"
+                                                        data-cantidad="{{ $inventario->cantidad }}"
+                                                        data-fechaVencimiento="{{ $inventario->fechaVencimiento }}"
+                                                        data-categoria="{{ $inventario->categoria }}"
                                                         data-bs-toggle="modal" data-bs-target="#editarModal">
                                                         <span class="material-symbols-outlined">edit</span>
                                                     </a>
 
-                                                    @include('includes.ModalEditarUser')
+                                                    @include('includes.ModalEditarInsumos')
 
-                                                    <form action="{{ route('destroy.Usuario', $users->id) }}"
+                                                    <form action="{{ route('destroy.Usuario', $inventario->id) }}"
                                                         class="form-eliminar" method="POST" style="display:inline-block">
                                                         @csrf
                                                         @method('DELETE')
@@ -92,22 +94,22 @@
                 }
             });
 
-            $('.editar-usuario').on('click', function() {
+            $('.editar-insumos').on('click', function() {
                 // Obtener los datos del usuario desde los atributos data-*
                 var id = $(this).data('id');
-                var name = $(this).data('name');
-                var apellido = $(this).data('apellido');
-                var cedula = $(this).data('cedula');
-                var email = $(this).data('email');
+                var nombremedicamento = $(this).data('nombremedicamento');
+                var cantidad = $(this).data('cantidad');
+                var fechaVencimiento = $(this).data('fechavencimiento');
+                var categoria = $(this).data('categoria');
 
                 // Cargar los datos en el modal
-                $('#editarNombre').val(name);
-                $('#editarApellido').val(apellido);
-                $('#editarCedula').val(cedula);
-                $('#editarEmail').val(email);
+                $('#editarNombremedicamento').val(nombremedicamento);
+                $('#editarCantidad').val(cantidad);
+                $('#editarFechaVencimiento').val(fechaVencimiento);
+                $('#editarCategoria').val(categoria);
 
                 // Actualizar el formulario con la ruta correcta usando un marcador de posición en la ruta de Laravel
-                $('#formEditarUsuario').attr('action', "{{ route('update.Usuario', ':id') }}".replace(
+                $('#formEditarInsumos').attr('action', "{{ route('update.inventario', ':id') }}".replace(
                     ':id', id));
             });
 

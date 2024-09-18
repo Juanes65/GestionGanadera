@@ -1,10 +1,10 @@
 @extends('layouts.principal')
 
-@section('title', 'Usuarios')
+@section('title', 'Animales')
 
 @section('contenido')
     <div class="divisor">
-        <h3 class="texto ">Usuarios Registrados</h3>
+        <h3 class="texto ">Animales Registrados</h3>
     </div>
     <br>
 
@@ -20,32 +20,35 @@
                                     <thead class="table-dark">
                                         <tr style="text-align: center">
                                             <th scope="col">Nombre</th>
-                                            <th scope="col">Apellido</th>
-                                            <th scope="col">Cedula</th>
-                                            <th scope="col">Email</th>
+                                            <th scope="col">Tipo de animal</th>
+                                            <th scope="col">Raza</th>
+                                            <th scope="col">Edad</th>
+                                            <th scope="col">Identificador</th>
                                             <th scope="col">Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($usuarios as $users)
+                                        @foreach ($animals as $animal)
                                             <tr>
-                                                <td>{{ $users->name }}</td>
-                                                <td>{{ $users->apellido }}</td>
-                                                <td>{{ $users->cedula }}</td>
-                                                <td>{{ $users->email }}</td>
+                                                <td>{{ $animal->nombre }}</td>
+                                                <td>{{ $animal->tipoAnimal }}</td>
+                                                <td>{{ $animal->raza }}</td>
+                                                <td>{{ $animal->edad }}</td>
+                                                <td>{{ $animal->marcacion }}</td>
                                                 <td class="td-actions text-left">
                                                     <!-- Botón de edición con atributos de datos -->
-                                                    <a href="#" class="btn btn-warning editar-usuario"
-                                                        data-id="{{ $users->id }}" data-name="{{ $users->name }}"
-                                                        data-apellido="{{ $users->apellido }}"
-                                                        data-cedula="{{ $users->cedula }}" data-email="{{ $users->email }}"
-                                                        data-bs-toggle="modal" data-bs-target="#editarModal">
+                                                    <a href="#" class="btn btn-warning editar-animal"
+                                                        data-id="{{ $animal->id }}" data-nombre="{{ $animal->nombre }}"
+                                                        data-tipoAnimal="{{ $animal->tipoAnimal }}"
+                                                        data-raza="{{ $animal->raza }}" data-edad="{{ $animal->edad }}"
+                                                        data-marcacion="{{ $animal->marcacion }}" data-bs-toggle="modal"
+                                                        data-bs-target="#editarModal">
                                                         <span class="material-symbols-outlined">edit</span>
                                                     </a>
 
-                                                    @include('includes.ModalEditarUser')
+                                                    @include('includes.ModalEditarAnimal')
 
-                                                    <form action="{{ route('destroy.Usuario', $users->id) }}"
+                                                    <form action="{{ route('destroy.animals', $animal->id) }}"
                                                         class="form-eliminar" method="POST" style="display:inline-block">
                                                         @csrf
                                                         @method('DELETE')
@@ -55,7 +58,6 @@
                                                             </span>
                                                         </button>
                                                     </form>
-
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -92,23 +94,24 @@
                 }
             });
 
-            $('.editar-usuario').on('click', function() {
-                // Obtener los datos del usuario desde los atributos data-*
+            $('.editar-animal').on('click', function() {
                 var id = $(this).data('id');
-                var name = $(this).data('name');
-                var apellido = $(this).data('apellido');
-                var cedula = $(this).data('cedula');
-                var email = $(this).data('email');
+                var nombre = $(this).data('nombre');
+                var tipo = $(this).data('tipoanimal'); // Cambia 'tipoanimal' a 'tipoAnimal'
+                var raza = $(this).data('raza');
+                var edad = $(this).data('edad');
+                var marcacion = $(this).data('marcacion');
 
                 // Cargar los datos en el modal
-                $('#editarNombre').val(name);
-                $('#editarApellido').val(apellido);
-                $('#editarCedula').val(cedula);
-                $('#editarEmail').val(email);
+                $('#editarNombre').val(nombre);
+                $('#editarTipoAnimal').val(tipo);
+                $('#editarRaza').val(raza);
+                $('#editarEdad').val(edad);
+                $('#editarMarcacion').val(marcacion);
 
-                // Actualizar el formulario con la ruta correcta usando un marcador de posición en la ruta de Laravel
-                $('#formEditarUsuario').attr('action', "{{ route('update.Usuario', ':id') }}".replace(
-                    ':id', id));
+                // Actualizar el formulario con la ruta correcta
+                $('#formEditarAnimal').attr('action', "{{ route('update.animals', ':id') }}".replace(':id',
+                    id));
             });
 
             @if (session('success'))

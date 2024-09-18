@@ -16,6 +16,8 @@ $(document).ready(function() {
             $('.CardFormulario').css('box-shadow', '0 0 10px rgba(0, 0, 0, 0.5)');
             $('.img').css('box-shadow', '0 0 10px rgba(0, 0, 0, 0.5)');
             $('.imgMenu').css('box-shadow', '0 0 10px rgba(0, 0, 0, 0.5)');
+            $('.modal-content').css('background-color','#f4f4f4');
+            // $('.btn-close').css('background-color', '#1c2833');
             $('#content').css('background-color', '#f4f4f4');
             $('#header').css('background-color','#f4f4f4');
             $('body').css('background-color', '#f4f4f4');
@@ -27,6 +29,8 @@ $(document).ready(function() {
             $('.login-container').css('box-shadow', '0 0 10px rgba(255, 255, 255, 0.788)');
             $('.img').css('box-shadow', '0 0 10px rgba(255, 255, 255, 0.788)');
             $('.imgMenu').css('box-shadow', '0 0 10px rgba(255, 255, 255, 0.788)');
+            $('.modal-content').css('background-color', '#1c2833');
+            // $('.btn-close').css('background-color','black');
             $('#content').css('background-color', '#1c2833');
             $('#header').css('background-color','#1c2833');
             $('body').css('background-color', '#1c2833');

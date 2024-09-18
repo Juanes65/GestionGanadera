@@ -21,10 +21,10 @@ class UserController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
-        return view('User.create');
-    }
+    // public function create()
+    // {
+    //     return view('User.create');
+    // }
 
     /**
      * Store a newly created resource in storage.
@@ -43,7 +43,7 @@ class UserController extends Controller
             'password' => bcrypt($request->input('password'))
         ]);
 
-        return redirect()->route('menu_usuarios')->with('success', '¡Registro insertado correctamente!');
+        return redirect()->route('index.Usuario')->with('success', '¡Registro insertado correctamente!');
     }
 
     /**
@@ -57,12 +57,12 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
-    {
-        $usuario = User::find($id);
+    // public function edit(string $id)
+    // {
+    //     $usuario = User::find($id);
 
-        return view('User.edit',compact('usuario'));
-    }
+    //     return view('User.edit',compact('usuario'));
+    // }
 
     /**
      * Update the specified resource in storage.

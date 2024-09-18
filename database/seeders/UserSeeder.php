@@ -23,7 +23,7 @@ class UserSeeder extends Seeder
         ]);
 
         $users = [];
-        for ($i = 1; $i <= 99; $i++) {
+        for ($i = 1; $i <= 15; $i++) {
             $users[] = [
                 'name' => 'User ' . $i,
                 'apellido' => 'Apellido ' . $i,

@@ -14,15 +14,19 @@ class animal extends Model
     protected $fillable = [
         'id',
         'nombre',
+        'tipoAnimal',
+        'raza',
         'edad',
         'marcacion',
     ];
-    
-    public function procedures(){
+
+    public function procedures()
+    {
         return $this->belongsToMany(procedure::class);
     }
 
-    public function records(){
+    public function records()
+    {
         return $this->belongsToMany(record::class);
     }
 }
