@@ -4,7 +4,7 @@
 
 @section('contenido')
     <div class="divisor">
-        <h3 class="texto ">Usuarios Registrados</h3>
+        <h3 class="texto ">Insumos Registrados</h3>
     </div>
     <br>
 
@@ -47,7 +47,7 @@
 
                                                     @include('includes.ModalEditarInsumos')
 
-                                                    <form action="{{ route('destroy.Usuario', $inventario->id) }}"
+                                                    <form action="{{ route('destroy.inventario', $inventario->id) }}"
                                                         class="form-eliminar" method="POST" style="display:inline-block">
                                                         @csrf
                                                         @method('DELETE')
