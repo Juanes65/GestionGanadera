@@ -1,14 +1,14 @@
 @extends('layouts.principal')
 
-@section('title', 'Usuarios')
+@section('title', 'Insumos')
 
 @section('contenido')
-    <div class="divisor">
-        <h3 class="texto ">Insumos Registrados</h3>
+    <div class="contenido">
+        <h3 class="titulo ">Insumos Registrados</h3>
     </div>
     <br>
 
-    <div class="card-body">
+    <div class="card-body card-registros">
         <div class="row">
             <div class="col-md-12">
                 <div class="card card-user CardFormulario">
@@ -19,10 +19,10 @@
                                 <table class="table table-bordered table-striped" id="cliente">
                                     <thead class="table-dark">
                                         <tr style="text-align: center">
-                                            <th scope="col">Nombre</th>
-                                            <th scope="col">Apellido</th>
-                                            <th scope="col">Cedula</th>
-                                            <th scope="col">Email</th>
+                                            <th scope="col">Nombre del medicamento</th>
+                                            <th scope="col">Cantidad</th>
+                                            <th scope="col">Fecha de vencimiento</th>
+                                            <th scope="col">Categotia</th>
                                             <th scope="col">Acciones</th>
                                         </tr>
                                     </thead>
@@ -40,8 +40,8 @@
                                                         data-nombremedicamento="{{ $inventario->nombreMedicamento }}"
                                                         data-cantidad="{{ $inventario->cantidad }}"
                                                         data-fechaVencimiento="{{ $inventario->fechaVencimiento }}"
-                                                        data-categoria="{{ $inventario->categoria }}"
-                                                        data-bs-toggle="modal" data-bs-target="#editarModal">
+                                                        data-categoria="{{ $inventario->categoria }}" data-bs-toggle="modal"
+                                                        data-bs-target="#editarModal">
                                                         <span class="material-symbols-outlined">edit</span>
                                                     </a>
 
@@ -132,6 +132,14 @@
                     timer: 1500
                 });
             @endif
+
+            // @if (session('danger'))
+            //     Swal.fire({
+            //         icon: "error",
+            //         title: "Oops...",
+            //         text: "{{ session('danger') }}"
+            //     });
+            // @endif
 
             $('.form-eliminar').submit(function(e) {
                 e.preventDefault();

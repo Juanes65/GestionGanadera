@@ -4,25 +4,33 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\inventory;
-use App\Models\animal;
 
 class procedure extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'id',
         'nombreProcedimiento',
+        'descripcion',
+        'cantidad',
         'id_inventario',
         'id_animal',
+        'id_usuario'
     ];
 
-    public function inventories(){
-        return $this->belongsToMany(inventory::class);
+    public function inventory()
+    {
+        return $this->belongsTo(inventory::class, 'id_inventario');
     }
 
-    public function animals(){
-        return $this->belongsToMany(animal::class);
+    public function users()
+    {
+        return $this->belongsTo(User::class, 'id_usuario');
+    }
+
+    public function animal()
+    {
+        return $this->belongsTo(animal::class, 'id_animal');
     }
 }
+

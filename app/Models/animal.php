@@ -22,7 +22,7 @@ class animal extends Model
 
     public function procedures()
     {
-        return $this->belongsToMany(procedure::class);
+        return $this->hasMany(procedure::class, 'id_animal');
     }
 
     public function records()

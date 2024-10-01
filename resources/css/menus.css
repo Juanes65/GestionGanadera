@@ -49,3 +49,15 @@
 .image-container:hover .TextoPpal {
     opacity: 1; /* Muestra el texto al pasar el mouse */
 }
+
+.botones{
+    display: flex;
+    align-items: row;
+    justify-content: center;
+    background-color: aqua;
+    margin-left: 300px;
+}
+
+#cotenedorElementos {
+    transition: all 0.5s ease-in-out;
+}

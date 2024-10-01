@@ -24,6 +24,11 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function procedures()
+    {
+        return $this->hasMany(procedure::class, 'id_usuario');
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

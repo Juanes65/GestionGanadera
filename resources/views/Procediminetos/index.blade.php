@@ -1,10 +1,10 @@
 @extends('layouts.principal')
 
-@section('title', 'Animales')
+@section('title', 'Procedimientos')
 
 @section('contenido')
     <div class="contenido">
-        <h3 class="titulo ">Animales Registrados</h3>
+        <h3 class="titulo ">Procedimientos Registrados</h3>
     </div>
     <br>
 
@@ -19,36 +19,43 @@
                                 <table class="table table-bordered table-striped" id="cliente">
                                     <thead class="table-dark">
                                         <tr style="text-align: center">
-                                            <th scope="col">Nombre</th>
-                                            <th scope="col">Tipo de animal</th>
-                                            <th scope="col">Raza</th>
-                                            <th scope="col">Edad</th>
-                                            <th scope="col">Identificador</th>
-                                            <th scope="col">Acciones</th>
+                                            <th scope="col">Nombre del procedimiento</th>
+                                            <th scope="col">Descripcion</th>
+                                            <th scope="col">Cantidad del medicamento usado</th>
+                                            <th scope="col">Medicamento usado</th>
+                                            <th scope="col">Nombre del animal</th>
+                                            <th scope="col">Usuario que realizo el procedimiento</th>
+                                            <th scope="col" style="width: 100px;">Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($animals as $animal)
+                                        @foreach ($procedure as $procedures)
                                             <tr>
-                                                <td>{{ $animal->nombre }}</td>
-                                                <td>{{ $animal->tipoAnimal }}</td>
-                                                <td>{{ $animal->raza }}</td>
-                                                <td>{{ $animal->edad }}</td>
-                                                <td>{{ $animal->marcacion }}</td>
+                                                <td>{{ $procedures->nombreProcedimiento }}</td>
+                                                <td>{{ $procedures->descripcion }}</td>
+                                                <td>{{ $procedures->cantidad }}</td>
+                                                <td>{{ optional($procedures->inventory)->nombreMedicamento ?? 'Sin medicamento asignado' }}
+                                                </td>
+                                                <td>{{ optional($procedures->animal)->nombre ?? 'Sin animal asignado' }}
+                                                </td>
+                                                <td>{{ optional($procedures->users)->name ?? 'Sin usuario asignado' }}</td>
                                                 <td class="td-actions text-left">
                                                     <!-- Botón de edición con atributos de datos -->
-                                                    <a href="#" class="btn btn-warning editar-animal"
-                                                        data-id="{{ $animal->id }}" data-nombre="{{ $animal->nombre }}"
-                                                        data-tipoAnimal="{{ $animal->tipoAnimal }}"
-                                                        data-raza="{{ $animal->raza }}" data-edad="{{ $animal->edad }}"
-                                                        data-marcacion="{{ $animal->marcacion }}" data-bs-toggle="modal"
-                                                        data-bs-target="#editarModal">
+                                                    <a href="#" class="btn btn-warning editar-procedimientos"
+                                                        data-id="{{ $procedures->id }}"
+                                                        data-nombreProcedimiento="{{ $procedures->nombreProcedimiento }}"
+                                                        data-descripcion="{{ $procedures->descripcion }}"
+                                                        data-cantidad="{{ $procedures->cantidad }}"
+                                                        data-id_inventario="{{ $procedures->id_inventario }}"
+                                                        data-id_animal="{{ $procedures->id_animal }}"
+                                                        data-id_usuario="{{ $procedures->id_usuario }}"
+                                                        data-bs-toggle="modal" data-bs-target="#editarModal">
                                                         <span class="material-symbols-outlined">edit</span>
                                                     </a>
 
-                                                    @include('includes.ModalEditarAnimal')
+                                                    @include('includes.ModalEditarProcedimientos')
 
-                                                    <form action="{{ route('destroy.animals', $animal->id) }}"
+                                                    <form action="{{ route('destroy.procedimiento', $procedures->id) }}"
                                                         class="form-eliminar" method="POST" style="display:inline-block">
                                                         @csrf
                                                         @method('DELETE')
@@ -58,6 +65,7 @@
                                                             </span>
                                                         </button>
                                                     </form>
+
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -72,13 +80,20 @@
         </div>
     </div>
 
-    {{-- SE INCLUYEN LOS MODALS --}}
-
 @endsection
 
 @section('js')
     <script>
         $(document).ready(function() {
+
+            // Inicializa Select2 en todos los selects del modal
+            $('select').select2({
+                dropdownParent: $('#editarModal'),
+                width: '100%', // Para que ocupe todo el ancho disponible
+                placeholder: "Seleccione una opción", // Placeholder opcional
+                allowClear: true // Permite limpiar la selección
+            });
+
             $('#cliente').DataTable({
                 "language": {
                     "lengthMenu": "Mostrar _MENU_ registros por página",
@@ -94,25 +109,29 @@
                 }
             });
 
-            $('.editar-animal').on('click', function() {
+            $('.editar-procedimientos').on('click', function() {
                 var id = $(this).data('id');
-                var nombre = $(this).data('nombre');
-                var tipo = $(this).data('tipoanimal'); // Cambia 'tipoanimal' a 'tipoAnimal'
-                var raza = $(this).data('raza');
-                var edad = $(this).data('edad');
-                var marcacion = $(this).data('marcacion');
+                var nombreprocedimiento = $(this).data('nombreprocedimiento');
+                var descripcion = $(this).data('descripcion');
+                var cantidad = $(this).data('cantidad');
+                var id_inventario = $(this).data('id_inventario');
+                var id_animal = $(this).data('id_animal');
+                var id_usuario = $(this).data('id_usuario');
 
                 // Cargar los datos en el modal
-                $('#editarNombre').val(nombre);
-                $('#editarTipoAnimal').val(tipo);
-                $('#editarRaza').val(raza);
-                $('#editarEdad').val(edad);
-                $('#editarMarcacion').val(marcacion);
+                $('#editarNombreprocedimiento').val(nombreprocedimiento);
+                $('#editarDescripcion').val(descripcion);
+                $('#editarCantidad').val(cantidad);
 
-                // Actualizar el formulario con la ruta correcta
-                $('#formEditarAnimal').attr('action', "{{ route('update.animals', ':id') }}".replace(':id',
-                    id));
+                // Seleccionar el valor correcto en los selects
+                $('#editarId_inventario').val(id_inventario).trigger('change');
+                $('#editarId_animal').val(id_animal).trigger('change');
+                $('#editarId_usuario').val(id_usuario).trigger('change');
+
+                // Actualizar la acción del formulario
+                $('#formEditarProcedimientos').attr('action', "{{ route('update.procedimiento', ':id') }}".replace(':id', id));
             });
+
 
             @if (session('success'))
                 Swal.fire({
@@ -131,6 +150,14 @@
                     title: "{{ session('success') }}",
                     showConfirmButton: false,
                     timer: 1500
+                });
+            @endif
+
+            @if (session('danger'))
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "{{ session('danger') }}"
                 });
             @endif
 

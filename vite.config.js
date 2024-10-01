@@ -10,6 +10,7 @@ export default defineConfig({
                 'resources/css/principal.css',
                 'resources/css/imagenes.css',
                 'resources/css/menus.css',
+                'resources/css/registros.css',
                 'resources/css/LoginAndRegister.css'
             ],
             refresh: true,

@@ -3,16 +3,17 @@
 @section('title', 'Usuarios')
 
 @section('contenido')
-    <div class="divisor">
-        <h3 class="texto ">Usuarios Registrados</h3>
+    <div class="contenido">
+        <h3 class="titulo">Usuarios Registrados</h3>
     </div>
+
     <br>
 
-    <div class="card-body">
+    <div class="card-body card-registros">
         <div class="row">
             <div class="col-md-12">
                 <div class="card card-user CardFormulario">
-                    <div class="card-body">
+                    <div class="card-body card">
                         <p class="card-text">
                         <div class="author table-responsive">
                             <div class="card-body">

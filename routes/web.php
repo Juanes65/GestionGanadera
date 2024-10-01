@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AnimalController;
 use App\Http\Controllers\InventoryController;
+use App\Http\Controllers\ProcedureController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -35,4 +36,10 @@ Route::middleware('auth')->group(function () {
     Route::post('/Inventario/create/insert', [InventoryController::class, 'store'])->name('store.inventario');
     Route::put('/Inventario/index/{inventory}/update', [InventoryController::class, 'update'])->name('update.inventario');
     Route::delete('/Inventario/index/{inventory}', [InventoryController::class, 'destroy'])->name('destroy.inventario');
+
+    // Rutas para el CRUD de los procedimientos
+    Route::get('/Procedimientos/index', [ProcedureController::class, 'index'])->name('index.procedimiento');
+    Route::post('/Procedimientos/create/insert', [ProcedureController::class, 'store'])->name('store.procedimiento');
+    Route::put('/Procedimientos/index/{procedure}/update', [ProcedureController::class, 'update'])->name('update.procedimiento');
+    Route::delete('/Procedimientos/index/{procedure}', [ProcedureController::class, 'destroy'])->name('destroy.procedimiento');
 });

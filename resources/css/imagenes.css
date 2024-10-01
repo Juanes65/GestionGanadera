@@ -1,39 +1,38 @@
-.divisor {
-    text-align: center;
-}
-
-.image-container {
-    position: relative;
-    display: inline-block;
-    width: 200px;
-    height: 200px;
-}
-
 .img {
-    width: 100%;
-    height: 100%;
     border-radius: 50%;
-    object-fit: cover;
-    transition: opacity 0.3s ease;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
+    height: 200px;
+    width: 200px;
+    display: block;
+    margin: 0 auto;
 }
 
-.TextoPpal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.modal-body {
+    /* background-color: rgb(204, 204, 204); */
+    background-image: url("../img/fondo2.jpg") !important;
     color: white;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 20px;
     text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    border-radius: 10px;
 }
 
-.image-container:hover .TextoPpal {
-    opacity: 1;
+.modal-body input {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
 }
 
+.modal-body textarea {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
+}
+
+.btn {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.image-menu {
+    text-align: center;
+}
+
+.select2 {
+    text-align: start;
+    font-size: 15px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
+}
