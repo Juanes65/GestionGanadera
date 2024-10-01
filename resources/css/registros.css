@@ -18,3 +18,7 @@
 .card {
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
 }
+
+#footer {
+    background-color: white;
+}
