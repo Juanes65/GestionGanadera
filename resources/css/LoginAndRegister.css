@@ -1,34 +1,20 @@
-#header {
-    background-color: #f4f4f4;
+body{
+    background-color: rgb(204, 204, 204) !important;
+    background-image: url("../img/fondo.png"), url("../img/fondo2.jpg") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #e0e0e0;
 }
 
-#header nav {
-    text-align: end;
-}
+/* #tarjeta{
+    background-image: url("../img/fondo2.jpg") !important;
+} */
 
-#header nav a {
-    text-decoration: none;
-    color: black;
-    font-size: 20px;
+@keyframes wave {
+    0% { transform: translateX(0) translateY(0); }
+    50% { transform: translateX(-25%) translateY(10%); }
+    100% { transform: translateX(0) translateY(0); }
 }
-
-#content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-    background-color: #f4f4f4;
-}
-
-.login-container {
-    width: 100%;
-    max-width: 400px;
-    background: white;
-    padding: 2rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-.login-container h2 {
-    margin-bottom: 1rem;
+.wave-animation {
+    animation: wave 15s ease-in-out infinite;
 }

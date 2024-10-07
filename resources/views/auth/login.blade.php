@@ -2,69 +2,53 @@
 
 @section('title', 'Login')
 
-@section('header')
-    @auth
-        <a href="{{ url('/home') }}" class="rounded-md px-3 py-2 texto">
-            {{ Auth::user()->name }}
-        </a>
-    @else
-        @if (Route::has('register'))
-            <a href="{{ route('register') }}" class="rounded-md px-3 py-2 texto">
-                Registrarme
-            </a>
-        @endif
-    @endauth
-@endsection
-
 @section('contenido')
-    <h2 style="align-items: center">Login</h2>
+    <div class="flex min-h-screen items-center justify-center p-4">
+        <div class="bg-slate-900 rounded-xl shadow-lg overflow-hidden w-full max-w-4xl flex flex-col md:flex-row" id="tarjeta">
+            <div class="w-full md:w-1/2 p-8">
+                <a href="#" class="mb-8 text-gray-400 hover:text-white transition-colors inline-block"></a>
+                <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Iniciar Sesión</h2>
+                <p class="text-gray-400 mb-8 text-sm md:text-base"></p>
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
+                    <div class="mb-6">
+                        <label for="email" class="block text-sm font-medium text-gray-400 mb-2">Correo
+                            Electronico</label>
+                        <input type="text" id="email" name="email" required value="{{ old('email') }}"
+                            class="w-full bg-slate-800 border border-gray-700 text-white rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 @error('email') is-invalid @enderror"
+                            placeholder="Correo Electronico">
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div class="mb-6">
+                        <label for="password" class="block text-sm font-medium text-gray-400 mb-2">Password</label>
+                        <input type="password" id="password" name="password" required value="{{ old('password') }}"
+                            class="w-full bg-slate-800 border border-gray-700 text-white rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 @error('password') is-invalid @enderror"
+                            placeholder="Contraseña">
+                        @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
 
-        {{-- SECCION DEL CORREO --}}
-        <div class="form-group">
-            <label for="email" class="col-form-label text-md-end">{{ __('Correo') }}</label>
-            <div>
-                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"
-                    value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Correo Electronico">
-
-                @error('email')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
+                    <button type="submit"
+                        class="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-md transition-colors">
+                        {{ __('Ingresar') }}
+                    </button>
+                </form>
+            </div>
+            <div class="w-full md:w-1/2 relative overflow-hidden min-h-[200px] md:min-h-[400px]">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-500 opacity-25"></div>
+                <div>
+                    <img src="img/login.png" alt="">
+                </div>
             </div>
         </div>
+    </div>
 
-        {{-- SECCION DE LA CONTRASEÑA --}}
-        <div class="form-group">
-            <label for="password" class="col-form-label text-md-end">{{ __('Contraseña') }}</label>
-            <div>
-                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
-                    name="password" required autocomplete="current-password" placeholder="Contraseña">
-
-                @error('password')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </div>
-        </div>
-
-        {{-- SECCION DEL CONTROL --}}
-        <div class="mt-3">
-            <div>
-                <button type="submit" class="btn btn-primary">
-                    {{ __('Ingresar') }}
-                </button>
-
-                @if (Route::has('password.request'))
-                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                        {{ __('Olvidé mi contraseña') }}
-                    </a>
-                @endif
-            </div>
-        </div>
-    </form>
 @endsection

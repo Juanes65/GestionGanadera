@@ -14,12 +14,16 @@ return new class extends Migration
         Schema::create('procedures', function (Blueprint $table) {
             $table->id();
             $table->string('nombreProcedimiento');
+            $table->longText('descripcion');
+            $table->integer('cantidad');
             $table->unsignedBigInteger('id_inventario')->nullable();
             $table->unsignedBigInteger('id_animal')->nullable();
+            $table->unsignedBigInteger('id_usuario')->nullable();
             $table->timestamps();
 
             $table->foreign('id_inventario')->references('id')->on('inventories')->onDelete('set null');
             $table->foreign('id_animal')->references('id')->on('animals')->onDelete('set null');
+            $table->foreign('id_usuario')->references('id')->on('users')->onDelete('set null');
         });
     }
 

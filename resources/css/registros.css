@@ -1,0 +1,20 @@
+.titulo {
+    color: rgb(255, 255, 255) !important;
+    margin-top: 20px;
+}
+
+.contenido {
+    text-align: center;
+}
+
+.dataTables_filter {
+    margin-bottom: 20px; /* Ajusta el valor según sea necesario */
+}
+
+.card-registros {
+    margin-bottom: 20px;
+}
+
+.card {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
+}

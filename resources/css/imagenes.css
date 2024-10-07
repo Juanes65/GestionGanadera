@@ -1,0 +1,38 @@
+.img {
+    border-radius: 50%;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
+    height: 200px;
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+.modal-body {
+    /* background-color: rgb(204, 204, 204); */
+    background-image: url("../img/fondo2.jpg") !important;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+.modal-body input {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
+}
+
+.modal-body textarea {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
+}
+
+.btn {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.image-menu {
+    text-align: center;
+}
+
+.select2 {
+    text-align: start;
+    font-size: 15px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
+}

@@ -13,7 +13,9 @@ class InventoryController extends Controller
      */
     public function index()
     {
-        //
+        $inventory = inventory::all();
+        
+        return view('Inventario.index', compact('inventory'));
     }
 
     /**
@@ -29,7 +31,16 @@ class InventoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $inventory = new inventory();
+
+        $inventory->nombreMedicamento = $request->nombreMedicamento;
+        $inventory->cantidad = $request->cantidad;
+        $inventory->fechaVencimiento = $request->fechaVencimiento;
+        $inventory->categoria = $request->categoria;
+
+        $inventory->save();
+
+        return redirect()->route('index.inventario')->with('success', '¡Registro insertado correctamente!');
     }
 
     /**
@@ -53,7 +64,14 @@ class InventoryController extends Controller
      */
     public function update(Request $request, inventory $inventory)
     {
-        //
+        $inventory->nombreMedicamento = $request->nombreMedicamento;
+        $inventory->cantidad = $request->cantidad;
+        $inventory->fechaVencimiento = $request->fechaVencimiento;
+        $inventory->categoria = $request->categoria;
+
+        $inventory->update();
+
+        return redirect()->back()->with('success', '¡Registro actualizado correctamente!');
     }
 
     /**
@@ -61,6 +79,8 @@ class InventoryController extends Controller
      */
     public function destroy(inventory $inventory)
     {
-        //
+        $inventory->delete();
+
+        return redirect()->back()->with('success', '¡Registro eliminado correctamente!');
     }
 }

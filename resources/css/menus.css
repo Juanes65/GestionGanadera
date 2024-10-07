@@ -1,0 +1,63 @@
+.image-menu {
+    position: relative;
+    display: inline-block;
+    /* width: 100px;
+    height: 50px; */
+}
+
+.imgMenu {
+    width: 100%;
+    height: 100%;
+    border-radius: 25%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.TextoPpal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.image-menu:hover .TextoPpal {
+    opacity: 1;
+}
+
+#cliente_filter {
+    margin-bottom: 20px;
+}
+#cliente_filter input {
+    margin-right: 10px;
+}
+
+.image-container:hover .img {
+    transition: transform 0.5s ease-in-out;
+    transform: scale(1.3); /* Agranda la imagen un 10% */
+
+}
+
+.image-container:hover .TextoPpal {
+    opacity: 1; /* Muestra el texto al pasar el mouse */
+}
+
+.botones{
+    display: flex;
+    align-items: row;
+    justify-content: center;
+    background-color: aqua;
+    margin-left: 300px;
+}
+
+#cotenedorElementos {
+    transition: all 0.5s ease-in-out;
+}
