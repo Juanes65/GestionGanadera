@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <link rel="icon" href="{{asset('img/logo.png')}}" type="image/x-icon">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title')</title>
     <!-- Fonts -->
@@ -45,9 +45,9 @@
                     <div class="collapse navbar-collapse justify-content-center" id="navbarTogglerDemo01">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item"><a class="nav-link text-center" href="{{ route('home') }}">Home</a></li>
-                            <li class="nav-item"><a class="nav-link text-center" href="#">Dashboard</a></li>
+                            {{-- <li class="nav-item"><a class="nav-link text-center" href="#">Dashboard</a></li>
                             <li class="nav-item"><a class="nav-link text-center" href="#">Reports</a></li>
-                            <li class="nav-item"><a class="nav-link text-center" href="#">Settings</a></li>
+                            <li class="nav-item"><a class="nav-link text-center" href="#">Settings</a></li> --}}
                         </ul>
     
                         <!-- Autenticación -->

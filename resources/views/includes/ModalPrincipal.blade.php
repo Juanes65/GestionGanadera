@@ -160,3 +160,45 @@
         </div>
     </div>
 </div>
+
+{{-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------- --}}
+
+<!-- Modal INFORMACION DE LAS RESOLUCIONES -->
+<div class="modal fade" id="resolucion" tabindex="-1" aria-labelledby="exampleModalToggleLabel" aria-hidden="true">>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalToggleLabel">Seleccione una opcion (Archivos)</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-6 mt-5">
+                        <div class="image-menu">
+                            <img src="images/insert.png" class="img">
+                            <br>
+                            <a type="button" href="{{ route('index.resolucion') }}"
+                                class="btn btn-custom btn btn-success MiClase">
+                                Ver registros
+                            </a>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="col-sm-6 mt-5">
+                        <div class="image-menu">
+                            <img src="images/ver_registros.jpg" class="img">
+                            <br>
+                            <a type="button" class="btn btn-custom btn btn-success MiClase" data-bs-toggle="modal"
+                                data-bs-target="#insertresolucion">
+                                Insertar registros
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary cerrar" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>

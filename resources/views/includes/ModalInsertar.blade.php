@@ -291,3 +291,54 @@
         </div>
     </div>
 </div>
+
+{{-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------- --}}
+
+<!-- MODAL PARA INSERTAR EL PROCEDIMIENTOS -->
+<div class="modal fade" id="insertresolucion" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+    tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title texto" id="exampleModalToggleLabel2">Añadir Nuevo Insumo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="{{ route('store.resolucion') }}" method="POST" enctype="multipart/form-data">
+                <div class="modal-body">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="nombre_archivo" class="form-label texto">Nombre de la resolucion</label>
+                        <input type="text" name="nombre_archivo" class="form-control" id="exampleFormControlInput1" placeholder="Nombre de la resolucion" value="{{ old('nombre_archivo') }}">
+                        @if ($errors->has('nombre_archivo'))
+                            <span class="error text-danger"
+                                for="input-nombre">{{ $errors->first('nombre_archivo') }}</span>
+                        @endif
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="descripcion" class="form-label texto">Descripcion</label>
+                        <textarea type="text" name="descripcion" class="form-control" id="exampleFormControlInput1" placeholder="Descripcion"></textarea>
+                        @if ($errors->has('descripcion'))
+                            <span class="error text-danger"
+                                for="input-name">{{ $errors->first('descripcion') }}</span>
+                        @endif
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="url" class="form-label texto">Archivo</label>
+                        <input type="file" name="url" class="form-control" id="exampleFormControlInput1" accept="application/pdf">
+                        @if ($errors->has('url'))
+                            <span class="error text-danger" for="input-name">{{ $errors->first('url') }}</span>
+                        @endif
+                    </div>                    
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-outline-success">Insertar</button>
+                    <button type="button" class="btn btn-outline-danger" data-bs-target="#resolucion"
+                        data-bs-toggle="modal" data-bs-dismiss="modal">Regresar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

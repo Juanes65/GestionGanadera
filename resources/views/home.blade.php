@@ -47,7 +47,7 @@
         </div>
 
         <div class="col-12 mt-5">
-            <h1 class="text-center mb-4" style="color: white; font-size: 25px">Control</h1>
+            <h1 class="text-center mb-4" style="color: rgb(0, 0, 0); font-size: 25px">Control</h1>
             <br>
             <div class="d-flex flex-wrap justify-content-center gap-3" style="text-align: center">
                 <div style="text-align: center">
@@ -100,12 +100,12 @@
 
                 <div style="text-align: center">
                     <div>
-                        <a type="button" data-bs-toggle="modal" data-bs-target="#inventario">
-                            <img src="img/images.png" class="img">
+                        <a type="button" data-bs-toggle="modal" data-bs-target="#resolucion">
+                            <img src="images/pdf.webp" class="img">
                         </a>
                     </div>
                     <br>
-                    <a type="button" class="btn btn-custom btn btn-success MiClase" data-bs-toggle="modal" data-bs-target="#inventario">
+                    <a type="button" class="btn btn-custom btn btn-success MiClase" data-bs-toggle="modal" data-bs-target="#resolucion">
                         Opciones para los archivos
                     </a>
                 </div>

@@ -1,6 +1,7 @@
 body {
     background-color: rgb(204, 204, 204) !important;
-    background-image: url("../img/fondo.png"), url("../img/fondo2.jpg") !important;
+    /* background-image: url("../img/fondo.png"), url("../img/fondo5.jpg") !important; */
+    background-image: url("../img/fondo5.jpg") !important;
     background-repeat: no-repeat;
     background-size: cover;
     color: #e0e0e0;
