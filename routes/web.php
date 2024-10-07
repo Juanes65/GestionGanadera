@@ -3,6 +3,7 @@
 use App\Http\Controllers\AnimalController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\ProcedureController;
+use App\Http\Controllers\ResolucioneController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -42,4 +43,10 @@ Route::middleware('auth')->group(function () {
     Route::post('/Procedimientos/create/insert', [ProcedureController::class, 'store'])->name('store.procedimiento');
     Route::put('/Procedimientos/index/{procedure}/update', [ProcedureController::class, 'update'])->name('update.procedimiento');
     Route::delete('/Procedimientos/index/{procedure}', [ProcedureController::class, 'destroy'])->name('destroy.procedimiento');
+
+    // Ruta para crear el CRUD de los archivos PDF
+    Route::get('/Resolucion/index', [ResolucioneController::class, 'index'])->name('index.resolucion');
+    Route::post('/Resolucion/create/insert', [ResolucioneController::class, 'store'])->name('store.resolucion');
+    Route::put('/Resolucion/index/{resolucione}/update', [ResolucioneController::class, 'update'])->name('update.resolucion');
+    Route::delete('/Resolucion/index/{resolucione}', [ResolucioneController::class, 'destroy'])->name('destroy.resolucion');
 });

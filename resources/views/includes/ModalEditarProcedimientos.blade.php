@@ -6,8 +6,8 @@
                 <h5 class="modal-title texto" id="editarModalLabel">Editar Procedimientos</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <form id="formEditarProcedimientos" method="POST" enctype="multipart/form-data">
+            <form id="formEditarProcedimientos" method="POST" enctype="multipart/form-data">
+                <div class="modal-body">
                     @csrf
                     @method('PUT')
 
@@ -54,13 +54,12 @@
                         <label for="descripcion" class="form-label texto">Descripcion</label>
                         <textarea name="descripcion" class="form-control" id="editarDescripcion" placeholder="Descripción"></textarea>
                     </div>
-
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-outline-success">Actualizar</button>
-                        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</button>
-                    </div>
-                </form>
-            </div>
+                </div>
+                <div class="modal-footer" id="footer">
+                    <button type="submit" class="btn btn-outline-success">Actualizar</button>
+                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

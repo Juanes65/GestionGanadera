@@ -12,5 +12,7 @@ class resolucione extends Model
     protected $fillable = [
         'id',
         'nombre_archivo',
+        'descripcion',
+        'url'
     ];
 }

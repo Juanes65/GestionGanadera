@@ -12,7 +12,7 @@
                     <div class="card h-100 text-center">
                         <div class="card-body MiClase">
                             <div class="icon">
-                                <img src="{{asset('images/ppal_animal.jpg')}}" class="imagen_modal">
+                                <img src="{{ asset('images/ppal_animal.jpg') }}" class="imagen_modal">
                             </div>
                             <h3 class="card-title">Total Animales</h3>
                             <p class="card-text">{{ $total_animals }}</p>
@@ -24,7 +24,7 @@
                     <div class="card h-100 text-center">
                         <div class="card-body MiClase">
                             <div class="icon">
-                                <img src="{{asset('images/procedimientos.jpg')}}" class="imagen_modal">
+                                <img src="{{ asset('images/procedimientos.jpg') }}" class="imagen_modal">
                             </div>
                             <h3 class="card-title">Total Procedimientos del día</h3>
                             <p class="card-text">{{ $total_procedure }}</p>
@@ -36,7 +36,7 @@
                     <div class="card h-100 text-center">
                         <div class="card-body MiClase">
                             <div class="icon">
-                                <img src="{{asset('images/medicamentos.jpg')}}" class="imagen_modal">
+                                <img src="{{ asset('images/medicamentos.jpg') }}" class="imagen_modal">
                             </div>
                             <h3 class="card-title">Medicamentos Vencidos</h3>
                             <p class="card-text">{{ $total_medicamentos }}</p>
@@ -47,21 +47,27 @@
         </div>
 
         <div class="col-12 mt-5">
-            <h1 class="text-center mb-4" style="color: white; font-size: 25px">Control</h1>
+            <h1 class="text-center mb-4" style="color: rgb(0, 0, 0); font-size: 25px">Control</h1>
             <br>
             <div class="d-flex flex-wrap justify-content-center gap-3" style="text-align: center">
                 <div style="text-align: center">
                     <div>
-                        <img src="images/animales.jpg" class="img">
+                        <a type="button" data-bs-toggle="modal" data-bs-target="#animals">
+                            <img src="images/animales.jpg" class="img">
+                        </a>
                     </div>
                     <br>
-                    <a type="button" class="btn btn-custom btn btn-success MiClase" data-bs-toggle="modal" data-bs-target="#animals" >
+                    <a type="button" class="btn btn-custom btn btn-success MiClase" data-bs-toggle="modal" data-bs-target="#animals">
                         Opciones para los Animales
                     </a>
                 </div>
 
                 <div style="text-align: center">
-                    <img src="images/usuarios.webp" class="img">
+                    <div>
+                        <a type="button" data-bs-toggle="modal" data-bs-target="#users">
+                        <img src="images/usuarios.webp" class="img">
+                        </a>
+                    </div>
                     <br>
                     <a type="button" class="btn btn-custom btn btn-success MiClase" data-bs-toggle="modal" data-bs-target="#users">
                         Opciones para los usuarios
@@ -70,7 +76,9 @@
 
                 <div style="text-align: center">
                     <div style="text-align: end">
-                        <img src="images/medics.jpg" class="img">
+                        <a type="button" data-bs-toggle="modal" data-bs-target="#inventario">
+                            <img src="images/medics.jpg" class="img">
+                        </a>
                     </div>
                     <br>
                     <a type="button" class="btn btn-custom btn btn-success MiClase" data-bs-toggle="modal" data-bs-target="#inventario">
@@ -79,7 +87,11 @@
                 </div>
 
                 <div style="text-align: center">
-                    <img src="images/procedures.jpg" class="img">
+                    <div>
+                        <a type="button" data-bs-toggle="modal" data-bs-target="#procedimientos">
+                            <img src="images/procedures.jpg" class="img">
+                        </a>
+                    </div>
                     <br>
                     <a type="button" class="btn btn-custom btn btn-success MiClase" data-bs-toggle="modal" data-bs-target="#procedimientos">
                         Opciones para los procedimientos
@@ -87,9 +99,13 @@
                 </div>
 
                 <div style="text-align: center">
-                    <img src="img/images.png" class="img">
+                    <div>
+                        <a type="button" data-bs-toggle="modal" data-bs-target="#resolucion">
+                            <img src="images/pdf.webp" class="img">
+                        </a>
+                    </div>
                     <br>
-                    <a type="button" class="btn btn-custom btn btn-success MiClase" data-bs-toggle="modal" data-bs-target="#inventario">
+                    <a type="button" class="btn btn-custom btn btn-success MiClase" data-bs-toggle="modal" data-bs-target="#resolucion">
                         Opciones para los archivos
                     </a>
                 </div>

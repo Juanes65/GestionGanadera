@@ -3,11 +3,11 @@
     <div class="modal-dialog">
         <div class="modal-content img">
             <div class="modal-header">
-                <h5 class="modal-title texto" id="editarModalLabel">Editar Usuario</h5> 
+                <h5 class="modal-title texto" id="editarModalLabel">Editar Usuario</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <form id="formEditarUsuario" method="POST" enctype="multipart/form-data">
+            <form id="formEditarUsuario" method="POST" enctype="multipart/form-data">
+                <div class="modal-body">
                     @csrf
                     @method('PUT')
 
@@ -33,15 +33,15 @@
 
                     <div class="mb-3">
                         <label for="password" class="form-label texto">Contraseña</label>
-                        <input type="password" name="password" class="form-control" placeholder="Ingrese la contraseña solo si es necesario" id="editarPassword">
+                        <input type="password" name="password" class="form-control"
+                            placeholder="Ingrese la contraseña solo si es necesario" id="editarPassword">
                     </div>
-
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-outline-success">Actualizar</button>
-                        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</button>
-                    </div>
-                </form>
-            </div>
+                </div>
+                <div class="modal-footer" id="footer">
+                    <button type="submit" class="btn btn-outline-success">Actualizar</button>
+                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

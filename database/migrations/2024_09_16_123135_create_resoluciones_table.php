@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('resoluciones', function (Blueprint $table) {
             $table->id();
             $table->string('nombre_archivo');
+            $table->longText('descripcion');
+            $table->string('url');
             $table->timestamps();
         });
     }
