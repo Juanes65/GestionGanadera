@@ -18,9 +18,10 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <link rel="stylesheet" href="{{ asset('css/principal.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/imagenes.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/registros.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    @vite('resources/css/imagenes.css')
+    @vite('resources/css/registros.css')
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
 </head>
 
 <body>

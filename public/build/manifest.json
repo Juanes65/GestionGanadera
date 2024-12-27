@@ -1,0 +1,50 @@
+{
+  "resources/css/LoginAndRegister.css": {
+    "file": "assets/LoginAndRegister-DtEuY6YP.css",
+    "src": "resources/css/LoginAndRegister.css",
+    "isEntry": true
+  },
+  "resources/css/imagenes.css": {
+    "file": "assets/imagenes-766SZwJi.css",
+    "src": "resources/css/imagenes.css",
+    "isEntry": true
+  },
+  "resources/css/menus.css": {
+    "file": "assets/menus-Cv3fL5DV.css",
+    "src": "resources/css/menus.css",
+    "isEntry": true
+  },
+  "resources/css/principal.css": {
+    "file": "assets/principal-BWgOsCVC.css",
+    "src": "resources/css/principal.css",
+    "isEntry": true
+  },
+  "resources/css/registros.css": {
+    "file": "assets/registros-BuAdScVy.css",
+    "src": "resources/css/registros.css",
+    "isEntry": true
+  },
+  "resources/img/fondo.png": {
+    "file": "assets/fondo-CZSjCw3M.png",
+    "src": "resources/img/fondo.png"
+  },
+  "resources/img/fondo2.jpg": {
+    "file": "assets/fondo2-CNEafVug.jpg",
+    "src": "resources/img/fondo2.jpg"
+  },
+  "resources/img/fondo5.jpg": {
+    "file": "assets/fondo5-d3Uazjjd.jpg",
+    "src": "resources/img/fondo5.jpg"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-GlYQJv8R.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/sass/app.scss": {
+    "file": "assets/app-D-sv12UV.css",
+    "src": "resources/sass/app.scss",
+    "isEntry": true
+  }
+}
