@@ -17,11 +17,10 @@
     <script src="https://cdn.jsdelivr.net/npm/noty@3.1.4/lib/noty.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    @vite('resources/css/principal.css')
-    @vite('resources/css/imagenes.css')
-    @vite('resources/css/registros.css')
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-
+    <link rel="stylesheet" href="{{ asset('css/principal.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/imagenes.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/registros.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 
 <body>
@@ -97,7 +96,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    @vite(['resources/js/foco.js'])
+    {{-- @vite(['resources/js/foco.js']) --}}
     @yield('js')
 </body>
 
