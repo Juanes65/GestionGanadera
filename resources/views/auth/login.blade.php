@@ -1,6 +1,6 @@
 @extends('layouts.PlantillaSesiones')
 
-@section('title', 'Login')
+{{-- @section('title', 'Login')
 
 @section('contenido')
     <div class="flex min-h-screen items-center justify-center p-4">
@@ -51,4 +51,4 @@
         </div>
     </div>
 
-@endsection
+@endsection --}}
