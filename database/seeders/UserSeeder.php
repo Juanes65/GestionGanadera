@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
             'apellido' => 'Florez',
             'cedula' => '123456789',
             'email' => 'juan@gmail.com',
-            'password' => bcrypt('7019')
+            'password' => bcrypt('12345678')
         ]);
 
         $users = [];
